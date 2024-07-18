@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
+import { schedulerConfig } from "../config/schedulerConfig";
 
-const Scheduler = dynamic(() => import("./DevExtremeScheduler"), {
+const Scheduler = dynamic(() => import("./BryntumScheduler"), {
   ssr: false,
   loading: () => {
     return (
@@ -21,7 +22,7 @@ const Scheduler = dynamic(() => import("./DevExtremeScheduler"), {
 const SchedulerWrapper = () => {
   return (
     <>
-      <Scheduler />
+      <Scheduler {...schedulerConfig} />
     </>
   );
 };
