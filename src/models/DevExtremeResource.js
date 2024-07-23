@@ -1,27 +1,27 @@
-import { DataTypes } from "sequelize";
-import sequelize from "../config/database.js";
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
 
 const DevExtremeResource = sequelize.define(
-  "DevExtremeResource",
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
+    'DevExtremeResource',
+    {
+        id : {
+            type          : DataTypes.INTEGER,
+            primaryKey    : true,
+            autoIncrement : true
+        },
+        text : {
+            type      : DataTypes.STRING,
+            allowNull : false
+        },
+        color : {
+            type      : DataTypes.STRING,
+            allowNull : true
+        }
     },
-    text: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    color: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-  },
-  {
-    tableName: "devextreme_resources",
-    timestamps: false,
-  }
+    {
+        tableName  : 'devextreme_resources',
+        timestamps : false
+    }
 );
 
 export default DevExtremeResource;
